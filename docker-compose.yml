@@ -6,6 +6,6 @@ services:
     volumes:
       - /opt/vaultwarden/data:/data
     ports:
-      - "8081:80"
+      - "80"
     environment:
       WEBSOCKET_ENABLED: "true"
