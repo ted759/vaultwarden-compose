@@ -1,13 +1,11 @@
-version: "3"
+version: "3.7"
 
 services:
-  bitwarden:
+  vaultwarden:
     image: vaultwarden/server:latest
-    container_name: bitwarden
+    volumes:
+      - /opt/vaultwarden/data:/data
     ports:
       - "8081:80"
-    volumes:
-      - bitwarden-data:/data
     environment:
-      - DOMAIN=http://10.16.63.50:8081   # ✅ 반드시 명시
-    restart: unless-stopped
+      WEBSOCKET_ENABLED: "true"
